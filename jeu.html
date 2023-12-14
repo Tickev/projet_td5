@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="ressources/icone.png" type="image/x-icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/jeu.css">
+	<title> Mario Clicker | JOUEZ ! </title>
+</head>
+
+<body onload="intervalles()">
+
+	<!-- SCORE  -->
+	<div class="opacity0" id="textesauvegarde">
+		<div class="absolutenoir">
+			<p id="tsave">La partie a bien été sauvegardée !</p>
+		</div>
+	</div>
+
+	<div id="gain">
+		<p id="tbonus">+10 000</p>
+		<img class="piecebonus" src="ressources/piecegrande.png" alt="piece score">
+	</div>
+
+	<section class="divscore">
+		<div class="containerscore">
+			<p id="tscore">0&nbsp;</p>
+			<img onclick="themesong()" class="taillepiecescore" src="ressources/piecegrande.png" alt="piece score">
+		</div>
+
+	</section>
+
+	<div class="divson">
+		<img onclick="onoff()" id="soundlogo" class="on" src="ressources/son_on.png">
+	</div>
+
+
+
+
+		<div class="opacity0" id="succesunlocked">
+				<p class="tsucces"> Nouveau succès déverouillé !</p>
+				<img id="idtrophee" src="ressources/trophee.png">
+		</div>
+		
+
+		<!-- SKIN ET BONUS  -->
+		<section id="gauche"> 
+			
+			<section id="barre_menu_deroulant">
+
+				<section onclick="succes()" id="menu_deroulant_succes">
+					<img id="icone_menu_succes" src="ressources/succes_icone.png" alt="Skin" />
+					<p class="txt_menu"> SUCCES </p>
+				</section>
+
+				<!-- <a href="classement.html"> -->
+				<section onclick="ongletclassement()" id="menu_deroulant_classem">
+					<img id="icone_menu_classement" src="ressources/classement_icone.png" alt="Skin" />
+					<p class="txt_menu"> CLASSEMENT </p>
+				</section>
+				<!-- </a> -->
+
+				<section onclick="skin()" id="menu_deroulant_skin">
+					<img id="icone_menu_skin" src="ressources/skin_icone.png" alt="Skin" />
+					<p class="txt_menu"> SKIN </p>
+				</section>
+
+			</section>
+		
+		</section>
+
+		<!-- SKIN -->
+		<section id="fenetre_skin" style="display:none">
+
+			<h1 id="titre_skin"> SKIN </h1>
+		
+			<section id="les_lignes_skin">
+				<section class="ligne_skin" id="ligneskinm">
+					<img class="img_skin" src="ressources/skin_mario.png" alt="Mario" />
+					<p class="txt_skin"> Mario </p>
+					<input onclick="changementskin()" type="radio" name="radio" class="btn_skin" id="btn_skinm"
+						checked="checked" />
+					<label for="btn_skinm"></label>
+				</section>
+
+				<section class="ligne_skin" id="ligneskinl">
+					<img class="img_skin" src="ressources/skin_luigi.png" alt="Luigi" />
+					<p class="txt_skin"> Luigi </p>
+					<input onclick="changementskin()" type="radio" name="radio" class="btn_skin" id="btn_skinl" />
+					<label for="btn_skinl"></label>
+				</section>
+
+				<section class="ligne_skin" id="ligneskinp">
+					<img class="img_skin" src="ressources/skin_peach.png" alt="Peach" />
+					<p class="txt_skin"> Peach </p>
+					<input onclick="changementskin()" type="radio" name="radio" class="btn_skin" id="btn_skinp" />
+					<label for="btn_skinp"></label>
+				</section>
+			</section>
+		</section>
+
+
+		<!-- SUCCES  -->
+		<section id="fenetre_succes" style="display:none">
+
+			<h1 id="titre_succes"> SUCCES </h1>
+		
+			<section id="les_lignes_succes">
+				<section class="ligne_succes" id="succes1">
+					<img class="img_succes" src="ressources/succes_obtenu.png" alt="Succès obtenu !" />
+					<p class="txt_succes"> Avoir atteint 10 pièces </p>
+				</section>
+
+				<section class="ligne_succes" id="succes2">
+					<img class="img_succes" src="ressources/succes_obtenu.png" alt="Succès obtenu !" />
+					<p class="txt_succes"> Avoir atteint 1000 pièces </p>
+				</section>
+
+				<section class="ligne_succes" id="succes3">
+					<img class="img_succes" src="ressources/succes_obtenu.png" alt="Succès obtenu !" />
+					<p class="txt_succes"> Avoir atteint 100 000 pièces </p>
+				</section>
+
+				<section class="ligne_succes" id="succes4">
+					<img class="img_succes" src="ressources/succes_obtenu.png" alt="Succès obtenu !" />
+					<p class="txt_succes"> Avoir acheter un bonus </p>
+				</section>
+			</section>
+
+		</section>
+		
+	<div id="milieu">
+		<img onclick="Clique()" id="mario" src="ressources/mario.png">
+		<img id="tuyau" src="ressources/tuyau.png">
+	</div>
+
+		<!-- BOUTIQUE -->
+		<div id="boutique" id="boutique_tel">
+
+
+			<div id="titre_boutique">
+					<h1> BOUTIQUE </h1>
+			</div>
+
+			<div class="ligne_boutique">
+				<img class="rond_boutique" id="rondmystere" src="ressources/mystere.png" onmouseenter="explication_bonus1()" onmouseleave="fermer_explications1()">
+
+				<div id="bloc_mystere" class="grise">
+						<div id="bloc_boutique_tel">
+							<p class="nom_bonus"> Bloc Mystère</p>
+							<div class="container_stat">
+								<div class="statliveg">
+									<p id="nbbonus1l">0</p>
+									<img id="tailleillubonus" src="ressources/petitmystere.png">
+								</div>
+								<div class="statlived">
+									<p id="live1l" class="statlive">+0</p>
+									<img id="tailleillubonus2" src='ressources/piece.png'>
+									<p class="statlive">/ clic </p>
+								</div>
+							</div>
+						</div>
+						<button onclick="bonus1()" id="bonus1" class="btn_boutique">100<img class="pieceprix" src='ressources/piece.png'></button>
+					</div>
+				</div>
+
+
+
+
+			<div class="ligne_boutique">
+				<img class="rond_boutique" id="rondpiranha" src="ressources/plante.png" onmouseenter="explication_bonus2()" onmouseleave="fermer_explications2()">
+					<div id="bloc_plante" class="grise">
+
+						<div id="bloc_boutique_tel">
+							<p class="nom_bonus"> Plante Piranha </p>
+							<div class="container_stat">
+								<div class="statliveg">
+									<p id="nbbonus2l">0</p>
+									<img id="tailleillubonus" src="ressources/piranha.png">
+								</div>
+								<div class="statlived">
+									<p id="live2l" class="statlive">+0</p>
+									<img id="tailleillubonus2" src='ressources/piece.png'>
+									<p class="statlive">/ seconde</p>
+								</div>
+							</div>
+						</div>
+						<button onclick="bonus2()" id="bonus2" class="btn_boutique">100<img class="pieceprix" src='ressources/piece.png'></button>
+					</div>
+			</div>
+
+
+
+			<div class="ligne_boutique">
+				<img class="rond_boutique" id="rondcarapace" src="ressources/carapace.png" onmouseenter="explication_bonus3()" onmouseleave="fermer_explications3()">
+
+					<div id="bloc_carapace" class="grise">
+						
+						<div id="bloc_boutique_tel">
+							<p class="nom_bonus"> Carapace Bleue </p>
+							<div class="container_stat">
+								<div class="statliveg">
+									<p id="nbbonus3l">0</p>
+									<img id="tailleillubonus" src="ressources/blueshell.png">
+								</div>
+								<div class="statlived2">
+									<div class="column">
+										<p id="live3l" class="statlive">+0</p>
+										<img id="tailleillubonus2" src='ressources/piece.png'>
+										<p class="statlive">/ Clic&nbsp;</p>
+									</div>
+									<div class="column">
+										<p id="live4l" class="statlive">+0</p>
+										<img id="tailleillubonus2" src='ressources/piece.png'>
+										<p class="statlive">/ seconde</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button onclick="bonus3()" class="btn_boutique" id="bonus3">10000<img class="pieceprix" src='ressources/piece.png'></button>
+					</div>
+			</div>
+
+
+		</div>
+
+
+
+<!-- EXPLICATIONS BONUS AU SURVOL -->
+
+<div id="details_bonus1">
+	<p>
+		Ce <strong>BLOC MYSTERE</strong> vous permet d'augmenter vos gains au clic !
+		Chaque achat vous fera gagner 10 pièces supplémentaires par clic.  
+		Plus vous utilisez ce bonus, plus le gain au clic sera grand.
+		<br>
+		Pas si vite ! Vous devrez aussi dépenser de plus en<br> plusde pièces pour le réactiver...
+		<br>
+		A vous la richesse !
+	</p>
+
+	<img class="marioheureux" src="ressources/mario_bonus.png" alt="Mario vous explique !">
+
+</div>
+
+<div id="details_bonus2">
+	<p>
+		La <strong>PLANTE PIRANHA</strong> vous offre +10 pièces supplémentaires par secondes !
+		Plus vous utilisez ce bonus, plus le gain par seconde sera élevé.
+		Attention ! Vous devrez aussi dépenser de plus en plus de pièces pour réactiver la plante magique !
+		<br>
+		Croc croc...
+	</p>
+
+	<img class="marioheureux" src="ressources/mario_bonus.png" alt="Mario vous explique !">
+
+</div>
+
+
+<div id="details_bonus3">
+	<p>
+		Le bonus <strong>CARAPACE BLEUE</strong> vous permet d'augmenter vos gains par clic et par seconde !
+		A vous le maximum de pièces !
+
+		Bien utile, ce bonus n'est pas des plus faciles a obtenir !
+		Il vous faudra obtenir 10 000 pièces pour pouvoir l'activer une première fois...
+		<br>
+		Soyez stratégique pour déverouiller ce bonus ultime !<br>
+		BOOOMM !
+	</p>
+
+	<img class="marioheureux" src="ressources/mario_bonus.png" alt="Mario vous explique !">
+
+</div>
+
+
+<!-- POUR LE FORMAT TELEPHONE -->
+<div id="bas">
+	<div id="barre_menu_tel">
+
+				<section onclick="succes()" id="menu_deroulant_succes">
+					<img id="icone_menu_succes" src="ressources/succes_icone.png" alt="Skin" />
+					<p class="txt_menu"> SUCCES </p>
+				</section>
+
+				<!-- <a href="classement.html"> -->
+				<section onclick="ongletclassement()" id="menu_deroulant_classem">
+					<img id="icone_menu_classement" src="ressources/classement_icone.png" alt="Skin" />
+					<p class="txt_menu"> CLASSEMENT </p>
+				</section>
+				<!-- </a> -->
+
+				<section onclick="boutique()" id="menu_deroulant_boutique">
+					<img id="icone_menu_boutique" src="ressources/icone_boutique.png" alt="Boutique" />
+					<p class="txt_menu"> BOUTIQUE </p>
+				</section>
+
+				<section onclick="skin()" id="menu_deroulant_skin">
+					<img id="icone_menu_skin" src="ressources/skin_icone.png" alt="Skin" />
+					<p class="txt_menu"> SKIN </p>
+				</section>
+
+	</div>
+</div>
+
+
+
+		<script src="js/jeu.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+@font-face {
+	font-family : 'londrina';
+	src: url('../typos/Londrina-Solid.ttf');
+}
+
+
+html,body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: linear-gradient(70deg, white, #009BD9);
+	background-color: #009BD9;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	background-repeat: no-repeat;
+}
+
+#logo{
+	margin-top: 25px;
+	width : 350px;
+}
+
+#bloc_blanc {
+	background-color : white;
+	width : 800px;
+	height : 425px;
+	padding-top : 2%;
+	padding-bottom : 4%;
+	border-radius : 45px;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	flex-direction : column;
+	z-index : 10;
+}
+
+.form{
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	flex-direction : column;	
+}
+
+/* #son_on, #son_off{ */
+	/* width : 3%; */
+	/* position : absolute; */
+	/* right : 20px; */
+	/* top : 20px; */
+/* } */
+
+/* #son_off{ */
+	/* opacity : 0; */
+/* } */
+
+#champs_pseudo {
+	padding : 15px;
+	width : 315px;
+	height: 30px;
+	background-color : #94D5EF;
+	border : none;
+	border-radius : 20px;
+	text-align : center;
+	font-size : 30px;
+	margin-top : 19%;
+	margin-bottom : 14%;
+	font-family : 'londrina';
+	color : #000;
+}
+
+#champs_pseudo::placeholder{
+	color: #565656;
+	filter: opacity(0.7);
+}
+
+#cta_jouer{
+	cursor: pointer;
+	border-radius : 30px;
+	background-color : #009BD9 ;
+	color : white;
+	border : 4px solid  #009BD9 ;
+	width : 275px;
+	height: 70px;
+	font-size : 30px;
+	font-family : 'londrina';
+	transition-property : background-color, color; 
+	transition-duration : 0.2s;
+	transition-timing-function : linear; 
+}
+
+#cta_jouer:disabled {
+	color : #80CDEC;
+}
+
+#cta_jouer:disabled:hover {
+	background-color : #009BD9 ;
+	color : #80CDEC;
+}
+
+#cta_jouer:hover{
+	background-color : white;
+	color : #009BD9 ;
+}
+
+#nuage1{
+	position : absolute;
+	top : 259px;
+	width : 17%;
+	z-index : 15;
+	animation  : nuage1 28s infinite linear ;
+}
+
+#nuage2{
+	position : absolute;
+	top : 600px;
+	right : 10px;
+	width : 9%;
+	animation  : nuage2 30s infinite linear ;
+	z-index : 5;
+}
+
+#nuage3{
+	position : absolute;
+	top : 590px;
+	left : 400px;
+	width : 14%;
+	z-index : 20;
+	animation  : opacitenuage 1s linear ;
+}
+
+#nuage4{
+	position : absolute;
+	top : 310px;
+	right : 314px;
+	width : 13%;
+	z-index : 20;
+	animation  : opacitenuage 1s linear ;
+}
+
+@keyframes nuage1 {
+  from {
+    left : -18%;
+	top : 50px;
+  }
+
+  20% {
+	top : 70px;
+  }
+  
+  40% {
+	top : 50px;
+  }
+  
+  60% {
+	top : 70px;
+  }
+  
+  80% {
+	top : 50px;
+  }
+  
+    90% {
+	opacity : 1;
+  }
+  
+   to {
+	left : 82%;
+	top : 70px;
+	opacity :0;
+  }
+}
+
+@keyframes nuage2 {
+  from {
+    right : 0%;
+	top : 600px;
+	opacity :0;
+  }
+  2% {
+	  opacity : 1;
+  }
+
+   to {
+	right : 100%;
+	top : 600px;
+  }
+}
+
+@keyframes opacitenuage {
+  from {
+	opacity :0;
+  }
+
+   to {
+	opacity : 1;
+  }
+}
+
+
+/* RESPONSIVE */
+
+@media screen and (width<577px) {
+    #logo{
+		margin-top: 0px;
+		width : 250px;
+	}
+	
+	#bloc_blanc {
+		background-color : white;
+		width : 450px;
+		height : 500px;
+	}
+
+	#champs_pseudo {
+		padding : 15px;
+		width : 240px;
+		height: 20px;
+		font-size : 25px;
+	}
+
+	#cta_jouer{
+		width : 200px;
+		height: 50px;
+		text-align: center;
+		font-size : 25px;
+		padding : 0px;
+	}
+
+	#nuage1{
+		display: none;
+	}
+	
+	#nuage2{
+		display: none;
+	}
+	
+	#nuage3{
+		position : absolute;
+		top : 740px;
+		left : 350px;
+		width : 190px;
+		z-index : 10;
+	}
+	
+	#nuage4{
+		position : absolute;
+		top : 180px;
+		left: 12px;
+		width : 270px;
+		z-index : -2;
+	}
+}
+
+
+
+
+
+
+
+/* RESPONSIVE PETIT ORDI */
+
+@media screen and (width<721px) {
+
+	#bloc_blanc {
+		width : 500px;
+		height : 550px;
+	}
+
+	#cta_jouer{
+		width : 180px;
+	}
+	
+	#nuage3{
+		top : 760px;
+		right : 320px;
+		width : 190px;
+	}
+	
+	#nuage4{
+		top : 180px;
+		left: 12px;
+		width : 270px;
+	}
+
+}
+
+
+
+@media only screen and (min-width: 722px) and (max-width: 1400px) {
+
+	#bloc_blanc {
+		width : 500px;
+		height : 550px;
+	}
+
+	#cta_jouer{
+		width : 180px;
+	}
+	
+	#nuage3{
+		top : 760px;
+		right : 320px;
+		width : 190px;
+	}
+	
+	#nuage4{
+		top : 180px;
+		left: 12px;
+		width : 270px;
+	}
+
+}

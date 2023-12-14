@@ -1,0 +1,800 @@
+@font-face {
+    font-family: Londrina;
+    src: url(../typos/LondrinaSolid-Regular.ttf);
+  }
+
+@font-face {
+    font-family: Londrinal;
+    src: url(../typos/LondrinaSolid-Light.ttf);
+  }
+
+body{
+    background-image: url("../ressources/fondclassement.png");
+    background-size: cover;
+}
+
+.fondtab{
+    background-color: #000;
+    opacity : 0.7;
+}
+
+.main_div{
+    width: 100%;
+}
+
+.main_title{
+    text-align: center;
+    margin-top: 20px;
+}
+
+html, body{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.ligne{
+    display: flex;
+    align-items: center;
+    width: 825px;
+    height: 55px;
+    margin-bottom: 5px;
+    background-color: #000;
+    filter: opacity(70%);
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.lignej{
+    display: flex;
+    align-items: center;
+    width: 825px;
+    height: 55px;
+    margin-bottom: 5px;
+    background-color: #0321a7;
+    filter: opacity(70%);
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.position{
+    font-family: Londrina;
+    color: #FFFFFF;
+    font-size: 38px;
+    margin: 0px;
+    margin-left: 15px;
+    margin-right: 10px;
+    min-width: 32px;
+    text-align: center;
+}
+
+.pseudo{
+    font-family: Londrina;
+    color: #FFFFFF;
+    font-size: 30px;
+    margin: 0px;
+    max-width: 141px;
+    min-width: 141px;
+}
+
+.pieces{
+    font-family: Londrina;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px;
+    margin-top: 13px;
+    margin-left: 3px;
+    margin-right: 14px;
+}
+
+.score{
+    font-family: Londrina;
+    color: #FFFFFF;
+    font-size: 30px;
+    margin: 0px;
+}
+
+.container_classement{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition : display 2s;
+}
+
+.etoile{
+    width: 30px;
+}
+
+.divetoile{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 110px;
+    min-width: 100px;
+}
+
+.gauche{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+}
+
+.droite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre{
+    font-family: Londrina;
+    font-size: 80px;
+    margin: 0px;
+    color: #FFFFFF;
+}
+
+.titre2{
+    font-family: Londrinal;
+    font-size: 40px;
+    margin: 0px;
+    color: #FFFFFF;
+}
+
+.filtre{
+    width: 62px;
+    height: 100%;
+    position : absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.separateur{
+    width: 5px;
+    height: 38px;
+    border-radius : 20px;
+    margin-right: 10px;
+    background-color: #171E25;
+    filter: opacity(80%);
+    z-index: -5;
+}
+
+.containerbarrechiffre{
+    margin-top: 50px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.zonechiffre{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #000;
+    filter: opacity(85%);
+    width: 825px;
+    height: 100%;
+}
+
+
+.whitecross{
+    position: fixed;
+    right: 20px;
+}
+
+.tcroix{
+    width: 50px;
+    position: relative;
+    transition: all .2s ease-in;
+    cursor: pointer;
+}
+
+.tcroix:hover{
+    transform: scale(1.1);
+}
+
+
+@keyframes apparition{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
+}
+
+.apparition{
+    animation: apparition 0.5s;
+}
+
+.couleurchiffre{
+    margin : 0px 20px 0px 20px;
+    font-family: londrinal;
+    font-size: 35px;
+    cursor: pointer;
+    color: #16C6F9;
+}
+
+.couleurchiffrebase{
+    margin : 0px 20px 0px 20px;
+    font-family: londrinal;
+    font-size: 35px;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+
+.couleurchiffre:hover{
+    text-decoration: underline;
+}
+
+.couleurchiffrebase:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+/* RESPONSIVE */
+
+@media only screen and (min-width: 720px) and (max-width: 840px) {
+    .titre{
+        font-size: 60px;
+    }
+    
+    .titre2{
+        font-size: 40px;
+    }
+
+    .ligne{
+      width: 700px;
+      height: 55px;
+    }
+
+    .lignej {
+        width: 700px;
+        height: 55px;
+      }
+
+    .position{
+        font-size: 36px;
+        margin-left: 17px;
+        margin-right: 12px;
+    }
+
+    .filtre{
+        width: 65px;
+    }
+    
+    .pseudo{
+        font-size: 26px;
+    }
+    
+    .pieces{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 12px;
+        margin-top: 9px;
+    }
+    
+    .score{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 28px;
+        margin: 0px;
+    }
+
+    .divetoile{
+        display: none;
+    }
+
+    .tcroix{
+        width: 38px;
+        position: relative;
+        transition: all .2s ease-in;
+        cursor: pointer;
+    }
+    
+    .tcroix:hover{
+        transform: scale(1.1);
+    }
+
+    .whitecross{
+        position: fixed;
+        right: 20px;
+        z-index: 20;
+    }
+
+    .containerbarrechiffre{
+        height: 75px;
+
+    }
+
+    .zonechiffre{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #000;
+        filter: opacity(85%);
+        width: 700px;
+        height: 100%;
+    }
+
+    .couleurchiffre{
+        font-size: 28px;
+    }
+    
+    .couleurchiffrebase{
+        font-size: 28px;
+    }
+  }
+
+
+@media screen and (width < 577px) {
+    .titre{
+        font-size: 50px;
+    }
+    
+    .titre2{
+        font-size: 30px;
+    }
+
+    .ligne{
+      width: 500px;
+      height: 45px;
+    }
+
+    .lignej {
+        width: 500px;
+        height: 45px;
+      }
+
+    .position{
+        font-size: 28px;
+        margin-left: 15px;
+        margin-right: 10px;
+    }
+    
+    .pseudo{
+        font-size: 25px;
+    }
+    
+    .pieces{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 11px;
+        margin-top: 9px;
+    }
+    
+    .score{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 22px;
+        margin: 0px;
+    }
+
+    .divetoile{
+        display: none;
+    }
+
+    .tcroix{
+        width: 30px;
+        position: relative;
+        transition: all .2s ease-in;
+        cursor: pointer;
+    }
+    
+    .tcroix:hover{
+        transform: scale(1.1);
+    }
+
+    .whitecross{
+        position: fixed;
+        right: 20px;
+        z-index: 20;
+    }
+
+    .containerbarrechiffre{
+        height: 55px;
+
+    }
+
+    .zonechiffre{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #000;
+        filter: opacity(85%);
+        width: 500px;
+        height: 100%;
+    }
+
+    .couleurchiffre{
+        font-size: 25px;
+    }
+    
+    .couleurchiffrebase{
+        font-size: 25px;
+    }
+  }
+
+
+@media screen and (width < 501px) {
+    .titre{
+        font-size: 45px;
+    }
+    
+    .titre2{
+        font-size: 28px;
+    }
+
+    .ligne{
+      width: 450px;
+      height: 43px;
+    }
+
+    .lignej {
+        width: 450px;
+        height: 43px;
+      }
+
+    .position{
+        font-size: 27px;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    .filtre{
+        width: 52px;
+    }
+    
+    .pseudo{
+        font-size: 23px;
+    }
+    
+    .pieces{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 10px;
+        margin-top: 9px;
+    }
+    
+    .score{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 20px;
+        margin: 0px;
+    }
+
+    .divetoile{
+        display: none;
+    }
+
+    .tcroix{
+        width: 30px;
+        position: relative;
+        transition: all .2s ease-in;
+        cursor: pointer;
+    }
+    
+    .tcroix:hover{
+        transform: scale(1.1);
+    }
+
+    .whitecross{
+        position: fixed;
+        right: 20px;
+        z-index: 20;
+    }
+
+    .containerbarrechiffre{
+        height: 45px;
+
+    }
+
+    .zonechiffre{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #000;
+        filter: opacity(85%);
+        width: 450px;
+        height: 100%;
+    }
+
+    .couleurchiffre{
+        font-size: 24px;
+    }
+    
+    .couleurchiffrebase{
+        font-size: 24px;
+    }
+  }
+
+  @media screen and (width < 451px) {
+    .titre{
+        font-size: 40px;
+    }
+    
+    .titre2{
+        font-size: 26px;
+    }
+
+    .ligne{
+      width: 400px;
+      height: 40px;
+    }
+
+    .lignej {
+        width: 400px;
+        height: 40px;
+      }
+
+    .position{
+        font-size: 25px;
+        margin-left: 6px;
+        margin-right: 3px;
+    }
+
+    .filtre{
+        width: 45px;
+    }
+    
+    .pseudo{
+        font-size: 20px;
+        min-width: 100px;
+    }
+    
+    .pieces{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 9px;
+        margin-top: 9px;
+    }
+    
+    .score{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 19px;
+        margin: 0px;
+    }
+
+    .divetoile{
+        display: none;
+    }
+
+    .tcroix{
+        width: 25px;
+        position: relative;
+        transition: all .2s ease-in;
+        cursor: pointer;
+    }
+    
+    .tcroix:hover{
+        transform: scale(1.1);
+    }
+
+    .whitecross{
+        position: fixed;
+        right: 20px;
+        z-index: 20;
+    }
+
+    .containerbarrechiffre{
+        height: 40px;
+
+    }
+
+    .zonechiffre{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #000;
+        filter: opacity(85%);
+        width: 400px;
+        height: 100%;
+    }
+
+    .couleurchiffre{
+        font-size: 22px;
+    }
+    
+    .couleurchiffrebase{
+        font-size: 22px;
+    }
+  }
+
+  @media screen and (width < 401px) {
+    .titre{
+        font-size: 33px;
+    }
+    
+    .titre2{
+        font-size: 24px;
+    }
+
+    .ligne{
+      width: 350px;
+      height: 35px;
+    }
+
+    .lignej {
+        width: 350px;
+        height: 35px;
+      }
+
+    .position{
+        font-size: 20px;
+        margin-left: 4px;
+        margin-right: 2px;
+    }
+
+    .filtre{
+        width: 42px;
+    }
+    
+    .pseudo{
+        font-size: 15px;
+        min-width: 100px;
+    }
+    
+    .pieces{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 9px;
+        margin-top: 4px;
+    }
+    
+    .score{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 15px;
+        margin: 0px;
+    }
+
+    .divetoile{
+        display: none;
+    }
+
+    .tcroix{
+        width: 22px;
+        position: relative;
+        transition: all .2s ease-in;
+        cursor: pointer;
+    }
+    
+    .tcroix:hover{
+        transform: scale(1.1);
+    }
+
+    .whitecross{
+        position: fixed;
+        right: 20px;
+        z-index: 20;
+    }
+
+    .containerbarrechiffre{
+        height: 35px;
+
+    }
+
+    .zonechiffre{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #000;
+        filter: opacity(85%);
+        width: 350px;
+        height: 100%;
+    }
+
+    .couleurchiffre{
+        font-size: 20px;
+    }
+    
+    .couleurchiffrebase{
+        font-size: 20px;
+    }
+  }
+
+  @media screen and (width < 351px) {
+    .titre{
+        font-size: 29px;
+    }
+    
+    .titre2{
+        font-size: 20px;
+    }
+
+    .ligne{
+      width: 300px;
+      height: 30px;
+    }
+
+    .lignej {
+        width: 300px;
+        height: 30px;
+      }
+
+    .position{
+        font-size: 17px;
+        margin-left: 2px;
+        margin-right: 0px;
+    }
+
+    .filtre{
+        width: 38px;
+    }
+    
+    .pseudo{
+        font-size: 13px;
+        min-width: 50px;
+    }
+    
+    .pieces{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 8px;
+        margin-top: 2px;
+    }
+    
+    .score{
+        font-family: Londrina;
+        color: #FFFFFF;
+        font-size: 12px;
+        margin: 0px;
+    }
+
+    .divetoile{
+        display: none;
+    }
+
+    .tcroix{
+        width: 19px;
+        position: relative;
+        transition: all .2s ease-in;
+        cursor: pointer;
+    }
+    
+    .tcroix:hover{
+        transform: scale(1.1);
+    }
+
+    .whitecross{
+        position: fixed;
+        right: 20px;
+        z-index: 20;
+    }
+
+    .containerbarrechiffre{
+        height: 30px;
+
+    }
+
+    .zonechiffre{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: #000;
+        filter: opacity(85%);
+        width: 300px;
+        height: 100%;
+    }
+
+    .couleurchiffre{
+        font-size: 18px;
+    }
+    
+    .couleurchiffrebase{
+        font-size: 18px;
+    }
+  }
+
+
+

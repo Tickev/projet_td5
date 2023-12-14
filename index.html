@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="styles/index.css">
+	<link rel="shortcut icon" href="ressources/icone.png" type="image/x-icon">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title> Mario Clicker - identification </title>
+</head>
+
+<body>
+
+		<!-- <img id="son_on" onclick="off()" src="ressources/son_on.png" alt="Cliquez ici pour désactiver le son"> -->
+		<!-- <img id="son_off" src="ressources/son_off.png" alt="Cliquez ici pour activer le son"> -->
+
+		<section id="bloc_blanc">
+			<img id="logo" src="ressources/logo.png" alt="MARIO CLICKER !">
+
+			<div class="form">
+				<input id="champs_pseudo" type="text" onkeyup="clicounon(this)" placeholder="Pseudo...">
+				<!-- this pour recuperer l'élement de ce champs -->
+
+				<button disabled id="cta_jouer" onclick="getpseudo()">JOUER</button>
+				<!-- disabled = non cliquable -->
+			</div>
+		</section>
+
+		<img id="nuage1" src="ressources/nuage.png" alt="elements de decoration">
+		<img id="nuage2" src="ressources/nuage.png" alt="elements de decoration">
+		<img id="nuage3" src="ressources/nuage.png" alt="elements de decoration">
+		<img id="nuage4" src="ressources/nuage.png" alt="elements de decoration">
+
+
+	<script src="js/index.js"></script>
+</body>
+
+</html>
